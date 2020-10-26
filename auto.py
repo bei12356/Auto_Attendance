@@ -27,6 +27,7 @@ class DaKa(object):
         self.cookie2 = None
         self.header = None
         self.info = None
+        null = None
         self.sess = requests.Session()
 
     def login(self):
