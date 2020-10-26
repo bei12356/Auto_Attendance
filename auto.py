@@ -62,6 +62,7 @@ class DaKa(object):
         area = geo_obj['province'] + " " + geo_obj['city'] + " " + geo_obj['district']
 
         new_info = jsontext.copy()
+        new_info['name'] = None
         new_info['area'] = area
         new_info["date"] = self.get_date()
         new_info["created"] = round(time.time())
@@ -92,6 +93,7 @@ def main(username, password, eai_sess, UUkey):
 
     spinner.start(text='正在获取个人信息...')
     dk.get_info()
+    spinner.succeed('已获取')
 
     spinner.start(text='正在为您打卡打卡打卡')
     res = dk.post()
